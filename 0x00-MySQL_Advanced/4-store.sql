@@ -1,6 +1,5 @@
 --  a SQL script that creates a trigger that decreases
 -- the quantity of an item after adding a new order.
-
 --initial
 DROP TRIGGER IF EXISTS reduce_quantity;
 DELIMITER $$
@@ -12,4 +11,4 @@ BEGIN
 	SET quantity = quantity - NEW.number
 	WHERE name = NEW.item_name;
 END $$
-DELIMITER ;
+DELIMITER;
